@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-navbar color="primary">
+      <button ion-button menuToggle><ion-icon name="menu"></ion-icon></button>
+    <ion-title><h6 class="titulo">{{ligaSelec}}</h6></ion-title>
+      
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  
+
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+	<ion-grid>
+  <ion-row>
+	 <ion-col  col-12 class="centro">
+		<b text-wrap class="texto3">Tabla General</b>
+    </ion-col>
+	   <ion-col  col-1 class="centro">
+		<b text-wrap class="texto2">#</b>
+    </ion-col>
+    <ion-col  col-3 class="centro">
+		<b text-wrap class="texto">Equipo</b>
+    </ion-col>
+     <ion-col col-1 class="centro" >
+		 <b class="texto2">JJ</b>
+    </ion-col>
+      <ion-col col-1 class="centro" >
+     <b class="texto2"> G</b>
+    </ion-col>
+      <ion-col col-1 class="centro" >
+      <b class="texto2">E</b>
+    </ion-col>
+      <ion-col col-1 class="centro" >
+     <b class="texto2"> P</b>
+    </ion-col>
+      <ion-col col-1 class="centro" >
+     <b class="texto2"> GF</b>
+    </ion-col>
+      <ion-col col-1 class="centro" >
+     <b class="texto2"> GC</b>
+    </ion-col>
+      <ion-col col-1 class="centro" >
+     <b class="texto2"> DG</b>
+    </ion-col>
+      <ion-col col-1 class="centro" >
+     <b class="texto2"> Pts</b>
+    </ion-col>
+  </ion-row>
+		
+		
+	   <ion-row  *ngFor="let datos of tablita; let i = index">
+
+                <ion-col text-wrap class="centro1">{{i+1}}</ion-col>           
+                <ion-col text-wrap col-3 class="centro1">{{ datos.Equipo }}</ion-col> 
+                <ion-col text-wrap col-1 class="centro1">{{ datos.JJ }}</ion-col> 
+                <ion-col col-1 class="centro1">{{ datos.G }}</ion-col> 
+               <ion-col col-1 class="centro1"> {{ datos.E }}</ion-col> 
+                <ion-col col-1 class="centro1">{{ datos.P }}</ion-col> 
+                <ion-col col-1 class="centro1">{{ datos.GF }}</ion-col> 
+                <ion-col col-1 class="centro1">{{ datos.GC}}</ion-col> 
+                <ion-col col-1 class="centro1">{{ datos.DG }}</ion-col> 
+                <ion-col col-1 class="centro1">{{ datos.PTS }}</ion-col> 
+
+    </ion-row>
+    </ion-grid>   
+
+	
+
+	
+</ion-content>-->
+	
+	

@@ -1,0 +1,98 @@
+page-about-log {
+	
+	.texto{
+	color: black;
+	font-weight: 400;	
+	
+		
+	}
+	.texto2{
+	color: black;
+	font-weight: 400;	
+	font-size: 1.39rem;
+		
+	}
+.sinEspacio {
+    margin-bottom: -5px;
+    margin-top: -10px;
+    min-height: 0px;
+    height: 15px;
+	color: transparent
+}
+
+.sinEspacio2 {
+    margin-bottom: 0px;
+    margin-top: 0px;
+    min-height: 0px;
+    height: 15px;
+	color: transparent
+}
+
+	.button2 {
+	font-weight: 400;
+	font-size: 1.4rem;
+    background-color: Transparent;
+    cursor:pointer;
+	box-shadow: none !important;
+    border-color: red;
+	text-align: justify;
+    
+		
+}
+	.mapa {
+    font-size: 1.4rem;
+    background-color: azure;
+    cursor: pointer;
+    box-shadow: none !important;
+    border-color: black;
+    outline-width: thick;
+    outline-color: white;
+    color: #009688;
+    font-weight: bold;
+		
+}
+	
+	.button {
+    background-color: transparent;
+    border: none;
+    cursor:pointer;
+  border-color: rgba(0,0,0,0) !important;
+  outline: none !important;
+
+}
+	.button5 {
+    background-color: transparent;
+	color : black;
+  
+
+}
+	.button3 {
+    background-color: red;
+    border: none;
+    cursor:pointer;
+	 box-shadow: none !important;
+  border-color: rgba(0,0,0,0) !important;
+  outline: none !important;
+
+}
+	.button4 {
+    background-color: green;
+    border: none;
+    cursor:pointer;
+	 box-shadow: none !important;
+  border-color: rgba(0,0,0,0) !important;
+  outline: none !important;
+
+}
+	
+	.wrap-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.item-divider-ios {
+    padding-left: 16px;
+    color: #222;
+    background-color: transparent;
+}	
+
+}

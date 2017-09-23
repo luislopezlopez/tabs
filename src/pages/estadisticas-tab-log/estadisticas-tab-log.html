@@ -1,0 +1,30 @@
+<ion-header>
+	
+  <ion-navbar color="primary">
+      <button ion-button  menuToggle > <ion-icon name="menu"></ion-icon> </button>
+    <ion-title >
+    
+     <button ion-button icon-right  ion-button center (click)="launchLigasPage()"> {{ligaSelec}} <ion-icon name="ios-arrow-down-outline"></ion-icon> </button> 
+        
+
+    </ion-title>
+      
+
+ 
+             
+	
+	  
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	Logged
+    
+    <button ion-button full ion-button class="prueba"(click)="openEstadisticas()" >Tabla General</button>
+	<button ion-button full ion-button class="prueba"(click)="openResultados()">Resultados anteriores</button>
+	<button ion-button full ion-button class="prueba"(click)="mejorOfensiva()">Mejor Ofensiva</button>
+    <button ion-button full ion-button class="prueba"(click)="mejorDefensiva()">Mejor Defensiva</button>
+    <button ion-button full ion-button class="prueba">Goleadores</button>
+
+</ion-content>

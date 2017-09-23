@@ -1,0 +1,105 @@
+<div id="custom-overlay" [style.display]="splash ? 'flex': 'none'">
+  <div class="flb">
+    <div class="Aligner-item Aligner-item--top"></div>
+    <img src="assets/logo.svg">
+    <div class="Aligner-item Aligner-item--bottom"></div>
+  </div>
+</div>
+
+
+
+<ion-header>
+  <ion-navbar color="primary">
+      <button ion-button  menuToggle >
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title align-title="center" >
+    
+        <button ion-button icon-right  ion-button center (click)="launchLigasPage()"> {{ligaSelec}} <ion-icon name="ios-arrow-down-outline"></ion-icon> </button>
+
+        
+
+    </ion-title>
+      
+	 <!--
+	  <ion-buttons end>
+		  <button ion-button (click)="createUser()"> 
+              <ion-icon name="add"> </ion-icon>
+		  
+		  </button>
+
+	  
+	  </ion-buttons>
+-->
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="background">
+    
+	<ion-grid >
+     
+        <div class="separador"> </div>
+	   <ion-row  *ngFor="let u of user1 | async"> 
+
+		   
+            <ion-col col-4 class="partidos"><button class="button2" >{{ u.Equipo1 }}</button></ion-col>
+            <ion-col col-4 class="partidos3"><button class="button3" >vs</button></ion-col> 
+            <ion-col  col-4  class="partidos"><button class="button2" >{{ u.Equipo2 }}</button></ion-col> 
+		   
+		   
+		   
+		   
+		   
+		   	<ion-col col-4 class="partidos2">{{u.gol1}}</ion-col>
+		    <ion-col col-4 class="partidos2"></ion-col>
+			<ion-col  col-4 class="partidos2">{{u.gol2}}</ion-col>
+		
+		   
+		   
+		   
+		   <ion-col col-2 class="partidos2"></ion-col>
+		   <ion-col col-3 class="partidos"  >{{u.Fecha}}<ion-datetime #datePicker [hidden]="true" (ionChange)="updateFecha1(u)"  displayFormat="DD MMM YY"  [(ngModel)]="chosenDate" min="{{minDate}}" placeholder="Fecha" monthShortNames="Ene, Feb, Mar, Abr, May, Jun, Jul, Ago, Sep, Oct, Nov, Dic" cancelText ="Cancelar" doneText="Aceptar"> </ion-datetime></ion-col>
+		   
+		   <ion-col col-2 class="partidos2"></ion-col>
+			<ion-col col-3 class="partidos" >{{u.Hora}}<ion-datetime #datePicker1 [hidden]="true" (ionChange)="updateHora1(u)"  displayFormat="hh mm A "  [(ngModel)]="chosenHour"  placeholder="Hora" cancelText ="Cancelar" doneText="Aceptar"> </ion-datetime></ion-col>   
+			 <ion-col col-2 class="partidos2"></ion-col>   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		    
+		   <ion-col col-12 class="partidos"><button class="button2">{{u.Jornada}}</button></ion-col>
+		    
+            
+		   
+		  
+		     <div class="separador"> </div>
+		   
+		   
+		   
+		   
+            </ion-row>
+		   
+
+	
+		
+		
+		
+    </ion-grid>  
+
+	
+   
+</ion-content>
+
+
+
+
+
+

@@ -1,0 +1,134 @@
+<ion-header>
+  <ion-navbar color="primary">
+      <button class = "button2" ion-button  menuToggle >
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title >
+    
+        <button ion-button icon-right  ion-button center (click)="launchLigasPage()"> {{ligaSelec}} <ion-icon name="ios-arrow-down-outline"></ion-icon> </button>         
+        
+
+    </ion-title>
+   </ion-navbar>
+</ion-header>
+
+<ion-content>
+	
+	     
+  <ion-card >
+
+    <img src="assets/CanteraInst.jpg"/>
+
+    <ion-card-content>
+      <ion-card-title text-center>
+        La Cantera Soccer Center
+      </ion-card-title >
+      <p text-justify >
+        La Cantera Soccer Center es un complejo deportivo que brinda un espacio para promover el fútbol 7 y fútbol 5, a fin de estimular la salud, la diversión y la competencia sana entre los practicantes del deporte.
+      </p>
+    </ion-card-content>
+	  
+	  
+	  
+	  
+	  
+	 <ion-list>
+	 <ion-item-divider class="sinEspacio"></ion-item-divider>
+	  <ion-item text-wrap>
+    <ion-icon name="navigate" item-start style="color: #009688"></ion-icon>
+	<b class="texto">Blvd. Atlixcayotl 5418, San Andrés Cholula, Puebla</b>
+    </ion-item>
+		 
+	 <ion-item-divider class="sinEspacio"></ion-item-divider>
+	<ion-item text-wrap>
+      <ion-icon name='call' item-start style="color:#009688"></ion-icon>
+		<b class="texto"> 2227265479</b>
+    </ion-item>
+     <ion-item-divider class="sinEspacio"></ion-item-divider>
+	
+	<ion-item text-wrap>
+      <ion-icon name='mail' item-start style="color: #009688"></ion-icon>
+			 <b class="texto2">gerencia@lacanterasoccer.com</b>
+    </ion-item>
+		 <ion-item-divider class="sinEspacio"></ion-item-divider>
+		 
+		<ion-item text-wrap>
+        <ion-icon name="map" item-start style="color: #009688"></ion-icon>
+			<button  class= "mapa"(click)="ubicacion()">¿Cómo llegar? </button>
+        </ion-item>
+		
+	 </ion-list> 
+	
+	  <ion-list-header>
+		  <b class="texto"> Anuncios</b>
+		   
+            <ion-row text-wrap *ngFor="let u of promoDB | async">
+		    <ion-item-divider class="sinEspacio2"> </ion-item-divider>
+            <ion-col col-1><ion-icon name='alert' item-start style="color: red"></ion-icon></ion-col>
+            <ion-col col-11><button class= "button2">{{ u.Promo }}</button></ion-col>
+			<ion-col col-12></ion-col>
+			<ion-item-divider class="sinEspacio"></ion-item-divider>
+            </ion-row>
+		  
+		   
+</ion-list-header>
+	   
+	 
+	  
+	  
+  </ion-card>
+	
+	
+	
+	
+	
+
+
+</ion-content>
+	
+	
+	
+
+
+	
+
+
+
+
+<!--
+<ion-header>
+  <ion-navbar>
+    <ion-title>LaunchNavigator Ionic 3 Example</ion-title>
+	   <button ion-button (click)="navigate()">Navigate</button>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label>Destination</ion-label>
+      <ion-select [(ngModel)]="destination">
+        <ion-option value="Westminster, London, UK">Westminster, London, UK</ion-option>
+        <ion-option value="51.498739, -0.133827">51.49,-0.13 (Westminster)</ion-option>
+      </ion-select>
+    </ion-item>
+	  
+	  
+	  
+	  
+    <ion-item>
+      <ion-label>Start</ion-label>
+      <ion-select [(ngModel)]="start">
+        <ion-option value="">None (current location)</ion-option>
+        <ion-option value="Manchester, UK">Manchester, UK</ion-option>
+        <ion-option value="53.493002,-2.240080">53.49,-2.24 (Manchester)</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <button ion-button (click)="navigate()">Navigate</button>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
+
+-->

@@ -1,0 +1,92 @@
+page-partidos {
+
+.roll1 {
+ //color: #ff3;
+  }	
+.button {
+    background-color: Transparent;
+    border: none;
+    cursor:pointer;
+
+  border-color: rgba(0,0,0,0) !important;
+  outline: none !important;
+}	
+	.partidos {
+    background-color: white;
+    border: none;
+    cursor:pointer;
+  border-color: rgba(0,0,0,0) !important;
+  outline: none !important;
+  text-align: center;
+  font-weight: bold;	
+}
+	.partidos2 {
+    background-color: white;
+		font-size: 1.9rem;
+    border: none;
+    cursor:pointer;
+	 box-shadow: none !important;
+  border-color: rgba(0,0,0,0) !important;
+  outline: none !important;
+  text-align: center;
+  font-weight: bold;
+  color: #C92A25;
+}
+	.partidos3 {
+    background-color: white;
+		font-size: 2.5rem;
+    border: none;
+    cursor:pointer;
+	 box-shadow: none !important;
+  border-color: rgba(0,0,0,0) !important;
+  outline: none !important;
+  text-align: center;
+  font-weight: bold;
+  color: #C92A25;
+}
+.button2 { 
+    background-color: Transparent;
+    border: none;
+    cursor:pointer;
+	box-shadow: none !important;
+    border-color: rgba(0,0,0,0) !important;
+    outline: none !important;
+	font-weight: bold;
+}
+	.button3 { 
+    background-color: Transparent;
+    border: none;
+    cursor:pointer;
+	box-shadow: none !important;
+    border-color: rgba(0,0,0,0) !important;
+    outline: none !important;
+	
+	font-size: 2rem;
+}
+	
+	.background { 
+    background-color: white;
+}	
+	
+	
+.separador { 
+    background-color: #E0F2F1;
+	border: 1px solid #E0F2F1;
+	height: 1px
+  
+}	
+	
+.row{
+background:#E0F2F1;
+border: think solid black;
+}
+	
+	
+	
+.disable-ripple ion-button-effect {
+  display: none;
+}
+
+
+
+}

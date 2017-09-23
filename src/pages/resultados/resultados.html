@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-navbar color="primary">
+      <button ion-button  menuToggle >
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title >
+        <h6>{{ligaSelec}}</h6>
+    </ion-title>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="background">
+    
+	<ion-grid >
+		<ion-col  col-12 class="centro">
+		<b text-wrap class="texto2">Resultados Anteriores</b>
+    </ion-col>
+     
+        <div class="separador"> </div>
+	   <ion-row  *ngFor="let u of user2 | async"> 
+		   
+            <ion-col col-4 class="partidos"><button class="button2" >{{ u.Equipo1 }}</button></ion-col>
+            <ion-col col-4 class="partidos"><button class="button2" >vs</button></ion-col> 
+            <ion-col  col-4  class="partidos"><button class="button2" >{{ u.Equipo2 }}</button></ion-col> 
+		   	<ion-col col-4 class="partidos2">{{u.gol1}}</ion-col>
+		    <ion-col  col-4 class="partidos"></ion-col>
+			<ion-col  col-4 class="partidos2">{{u.gol2}}</ion-col>
+		    <ion-col col-12 class="partidos"><button class="button2">{{ u.Fecha}}</button> <button class="button2" >{{ u.Hora}}</button></ion-col>
+		    <ion-col col-4 class="partidos" ><button class="button2">Finalizar Partido</button></ion-col>
+		   <ion-col col-4 class="partidos"><button class="button2">{{u.Jornada}}</button></ion-col>
+		    <ion-col col-4 class="partidos" ><button class="button2">Cancelar Partido</button></ion-col>
+		   
+		  
+		     <div class="separador"> </div>
+		   
+		   
+		   
+		   
+            </ion-row>
+		   
+
+	
+		
+		
+		
+    </ion-grid>  
+			
+
+</ion-content>

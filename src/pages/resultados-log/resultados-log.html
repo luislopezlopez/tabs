@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-navbar color="primary">
+      <button ion-button  menuToggle >
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title >
+        <h6>{{ligaSelec}}</h6>
+    </ion-title>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="background">
+	Logged
+    
+	<ion-grid >
+     
+        <div class="separador"> </div>
+	   <ion-row  *ngFor="let u of user2 | async"> 
+		   
+            <ion-col col-4 class="partidos"><button class="button2" (click)="updateEquipo1(u)">{{ u.Equipo1 }}</button></ion-col>
+            <ion-col col-4 class="partidos"><button class="button2" (click)="updateResultado(u)">vs</button></ion-col> 
+            <ion-col  col-4  class="partidos"><button class="button2" (click)="updateEquipo2(u)">{{ u.Equipo2 }}</button></ion-col> 
+		   	<ion-col col-4 class="partidos2">{{u.gol1}}</ion-col>
+		    <ion-col  col-4 class="partidos"></ion-col>
+			<ion-col  col-4 class="partidos2">{{u.gol2}}</ion-col>
+		    <ion-col col-12 class="partidos"><button class="button2"(click)="updateFecha(u)">{{ u.Fecha}}</button> <button class="button2" (click)="updateHora(u)">{{ u.Hora}}</button></ion-col>
+		    <ion-col col-4 class="partidos" ><button class="button2"(click)="mandarDato(u)">Finalizar Partido</button></ion-col>
+		   <ion-col col-4 class="partidos"><button class="button2"(click)="updateJornada(u)">{{u.Jornada}}</button></ion-col>
+		    <ion-col col-4 class="partidos" ><button class="button2"(click)="borrarPartido(u)">Cancelar Partido</button></ion-col>
+		   
+		  
+		     <div class="separador"> </div>
+		   
+		   
+		   
+		   
+            </ion-row>
+		   
+
+	
+		
+		
+		
+    </ion-grid>  
+			
+
+</ion-content>
