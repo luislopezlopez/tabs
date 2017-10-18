@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar color="primary">
+     
+    <ion-title><h6 >Perfil</h6></ion-title>
+    
+  </ion-navbar>
+</ion-header>
+
+
+
+
+<ion-content padding>
+
+	<ion-item>
+  <ion-label>Fecha de Nacimiento: {{(profileData| async)?.nacimiento}}</ion-label>
+  <ion-datetime displayFormat="DD MMM YY" [(ngModel)]="perfil.nacimiento"></ion-datetime>
+</ion-item>
+				<ion-item>
+				<ion-label floating> Nombre(s): {{(profileData| async)?.nombre}}</ion-label>
+              <ion-input  [(ngModel)]="perfil.nombre" ></ion-input>
+            </ion-item>
+	<ion-item>
+				<ion-label floating> Apellidos: {{(profileData| async)?.apellido}} </ion-label>
+              <ion-input  [(ngModel)]="perfil.apellido" ></ion-input>
+            </ion-item>
+			
+		    
+	<button ion-button block (click)="crearPerfil()">Aceptar</button>
+            
+</ion-content>

@@ -9,20 +9,11 @@
         
 
     </ion-title>
-   <ion-buttons end>
-		  <button ion-button (click)="promo()"> 
-              <ion-icon name="add"> </ion-icon>
-		  
-		  </button>
-
-	  
-	  </ion-buttons>
+  
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-	Logged
-	
 	     
   <ion-card >
 
@@ -89,7 +80,9 @@
 	
 	
 	
-	
+	<ion-fab bottom right>
+   <button (click)="promo()" ion-fab color="secondary"> <ion-icon name="add"></ion-icon></button>
+ </ion-fab>
 	
 
 

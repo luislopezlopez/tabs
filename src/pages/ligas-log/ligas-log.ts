@@ -45,7 +45,7 @@ export class LigasLogPage {
 nuevaLiga(){ // LIGA PARA LA CANTERA!!!! , DEBO HACER OTRO PARA OTRO TORNEO OK?
 		let newUserModal = this.alertController.create({
 			title:"Nueva Liga",
-			message:"Agrega aquí nombre de liga",
+			message:"Agregar Nueva Liga",
 			inputs: [
 				{
 					name: "Liga",
@@ -88,7 +88,7 @@ nuevaLiga(){ // LIGA PARA LA CANTERA!!!! , DEBO HACER OTRO PARA OTRO TORNEO OK?
 	this.storage.set('tablaConc',tablaConc);
 	this.storage.set('rollConc',rollConc);
 	this.storage.set('resultadosConc',resultadosConc);
-	this.storage.set('sesion',"iniciada");
+	this.storage.set('sesion',"iniciadaAdmin");
     this.events.publish('estado', "Cerrar Sesión");
     this.navCtrl.setRoot(TabsLogPage);
 	}

@@ -1,7 +1,3 @@
-// checkpoint, me falta hacer el storage en estadisticas
-// me falta hacer la logica para la pagina de bienvenida se pueda seleccionar las ligas y automaticamente cerrar las pantallas anteriores y dejar activa la root page.....
-
-
 import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform,AlertController} from 'ionic-angular'; 
 import { TabsPage } from '../pages/tabs/tabs';
@@ -9,11 +5,16 @@ import { TabsLogPage } from '../pages/tabs-log/tabs-log';
 import { AcercadePage } from '../pages/acercade/acercade';
 import { Partidos } from '../pages/partidos/partidos';
 import { sesionPage } from '../pages/sesion/sesion';
-import { bienvenidaPage } from '../pages/bienvenida/bienvenida';
+//import { perfilPage } from '../pages/perfil/perfil';
+//import { bienvenidaPage } from '../pages/bienvenida/bienvenida';
 import { Storage } from '@ionic/storage';
 import { Push, PushObject, PushOptions } from '@ionic-native/push';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Events } from 'ionic-angular';
+//import firebase from 'firebase';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { PerfilLogPage } from '../pages/perfil-log/perfil-log';
+
 @Component({ 
 	selector: 'my-page',
   templateUrl: 'app.html'
@@ -23,42 +24,49 @@ export class MyApp {
    edoSesion:any
   @ViewChild(Nav) nav: Nav;
   pages: Array<{title: string, component: any}>;
-  constructor(private splashScreen: SplashScreen,public alertCtrl: AlertController,public push: Push,public platform: Platform, public storage: Storage,public events: Events) {
-	  
-	  
-	  
+  constructor(private splashScreen: SplashScreen,public alertCtrl: AlertController,public push: Push,public platform: Platform, public storage: Storage,public events: Events, private afAuth: AngularFireAuth) {
+
 	  events.subscribe('estado', (estado) => {
-    // user and time are the same arguments passed in `events.publish(user, time)`
-		  this.edoSesion=estado;
-  });
+	  this.edoSesion=estado;
+		});
 	  
-	   this.pushSetup();
+	this.pushSetup();
     this.initializeApp();
+
     this.pages = [
       { title: 'Inicio', component: Partidos},
-      { title: 'Acerca de', component: AcercadePage },
+      //{ title: 'Acerca de', component: AcercadePage },
+	  //{ title: 'Modo Administrador', component: AcercadePage },
+	  { title: 'Perfil', component: PerfilLogPage }
 	  
     ];
   }
    openPage(page) {
 	   if(page==Partidos){
 	   }
-	   if(page.component==AcercadePage){
+	   else if(page.component==AcercadePage){
 		 this.nav.push(AcercadePage);	  
 	   }
-	   if(page.component==sesionPage){
+	   else if(page.component==sesionPage){
 		 this.nav.push(sesionPage);	  
+	   }
+	  else if(page.component==PerfilLogPage){
+		 this.nav.push(PerfilLogPage);	  
 	   }
 	  
   }
+	
+
 
 	initializeApp() {
+		
 
 	this.storage.get('liga').then ((liga)=> {
-
 		if(liga==null){
-			this.nav.setRoot(bienvenidaPage);
-			 this.splashScreen.hide();  
+			//this.events.publish('estado', "Iniciar Sesión");
+			this.nav.setRoot(sesionPage);
+			 this.splashScreen.hide(); 
+			console.log("quito splash!");
 		}
 		 else {
 		
@@ -72,19 +80,26 @@ export class MyApp {
     
    sesion(){
 	  this.storage.get('sesion').then ((sesion)=> { 
-			if(sesion=="iniciada") {
+		  console.log(sesion);
+		  	if(sesion=="iniciada") {
+				this.events.publish('estado', "Cerrar Sesión");
+				this.nav.setRoot(TabsPage);
+				this.splashScreen.hide(); 
+					}
+		  else if(sesion=="iniciadaAdmin") {
 				this.events.publish('estado', "Cerrar Sesión");
 				this.nav.setRoot(TabsLogPage);
 				this.splashScreen.hide(); 
 					}
-		    else if(sesion==null)  
+		    else   
 				{
-			   this.events.publish('estado', "Iniciar Sesión");
-			   this.nav.setRoot(TabsPage);
+			   this.nav.setRoot(sesionPage);
+			   //this.events.publish('estado', "Iniciar Sesión");
+			   //this.nav.setRoot(TabsPage);
 			   this.splashScreen.hide(); 
 
 				}
-		  
+			  
 		  });  
 	   }
 	
@@ -110,14 +125,17 @@ export class MyApp {
 			this.storage.get('sesion').then ((sesion)=> {
 		this.events.publish('estado', "Iniciar Sesión");		
         this.storage.remove('sesion');
-		this.initializeApp();
+		 this.storage.remove('liga');		
+		//this.initializeApp();
+		this.nav.setRoot(sesionPage);		
+this.afAuth.auth.signOut().then(function() {
+       this.nav.setRoot(sesionPage);
+}).catch(function(error) {
+     
+});
 				
 		});
 
-			
-			
-          
-          
         }
       }
     ]
@@ -132,6 +150,12 @@ export class MyApp {
 			if(sesion=="iniciada") {
 				this.cerrarSesion();
 					}
+			if(sesion=="iniciadaAdmin") {
+				this.cerrarSesion();
+					}
+			if(sesion=="iniciadaFB") {
+				this.cerrarSesion();
+					}
 		    else if(sesion==null)  
 				{
 			   this.nav.push(sesionPage);
@@ -142,7 +166,14 @@ export class MyApp {
 		
 
      
-   
+   /*cerrarSesionFB(){
+	
+	   this.afAuth.auth.signOut().then(function() {
+       console.log("sali de facebook");
+}).catch(function(error) {
+       console.log("no pude salir de facebook");
+});
+   }*/
    
    
    
@@ -199,5 +230,6 @@ pushObject.on('notification').subscribe((notification: any) => {
    
    
   }
+
 
 

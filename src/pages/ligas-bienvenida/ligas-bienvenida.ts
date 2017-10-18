@@ -91,7 +91,6 @@ nuevaLiga(){ // LIGA PARA LA CANTERA!!!! , DEBO HACER OTRO PARA OTRO TORNEO OK?
 	this.storage.set('tablaConc',tablaConc);
 	this.storage.set('rollConc',rollConc);
 	this.storage.set('resultadosConc',resultadosConc);
-	this.events.publish('estado', "Iniciar Sesión");
     this.navCtrl.setRoot(TabsPage);
 	}
 

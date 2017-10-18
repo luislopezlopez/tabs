@@ -3,9 +3,10 @@ import { IonicStorageModule  } from '@ionic/storage';
 import { BrowserModule  } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth'
 import { Push } from '@ionic-native/push'; 
 import { LaunchNavigator } from '@ionic-native/launch-navigator';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { MyApp } from './app.component';
 import { AboutPage } from '../pages/about/about';
@@ -13,7 +14,10 @@ import { Estadisticas } from '../pages/estadisticas/estadisticas';
 import { Partidos } from '../pages/partidos/partidos';
 import { ofensivaPage } from '../pages/ofensiva/ofensiva';
 import { defensivaPage } from '../pages/defensiva/defensiva';
+import { signPage } from '../pages/sign/sign';
+import { perfilPage } from '../pages/perfil/perfil';
 import { TabsPage } from '../pages/tabs/tabs';
+import { PerfilLogPage } from '../pages/perfil-log/perfil-log';
 import { TabsLogPage } from '../pages/tabs-log/tabs-log'; 
 import { CanchasLogPage } from '../pages/canchas-log/canchas-log';
 import { LigasLogPage } from '../pages/ligas-log/ligas-log';
@@ -34,11 +38,12 @@ import { Resultadosfirebase} from '../providers/resultadosfirebase';
 import { CanchasBienvenidaPage} from '../pages/canchas-bienvenida/canchas-bienvenida';
 import { LigasBienvenidaPage} from '../pages/ligas-bienvenida/ligas-bienvenida';
 export const firebaseConfig = {
-    apiKey: "AIzaSyC7A_2Lehj07bOzrzbTKj0rS3Rmn8T4mYY",
-    authDomain: "agenda-3ef6a.firebaseapp.com",
-    databaseURL: "https://agenda-3ef6a.firebaseio.com",
-    storageBucket: "agenda-3ef6a.appspot.com",
-    messagingSenderId: "383358515000"
+    apiKey: "AIzaSyA3chiVX67wTxgSUvoCdZ4r-2da7ixzy04",
+    authDomain: "travesano-mx.firebaseapp.com",
+    databaseURL: "https://travesano-mx.firebaseio.com/", 
+    storageBucket: "travesano-mx.appspot.com",
+    messagingSenderId: "701254416116"
+						
 };
 @NgModule({
   declarations: [
@@ -66,7 +71,10 @@ export const firebaseConfig = {
 	  ResultadosLogPage,
 	  AboutLogPage,
 	  ofensivaPage,
-      defensivaPage
+      defensivaPage,
+	  signPage,
+	  perfilPage,
+	  PerfilLogPage
 
 	 
   ],
@@ -75,6 +83,7 @@ export const firebaseConfig = {
 	  BrowserModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
+	  AngularFireAuthModule,
 	  IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
@@ -103,8 +112,10 @@ export const firebaseConfig = {
 	  ResultadosLogPage,
 	  AboutLogPage,
 	  ofensivaPage,
-      defensivaPage
-
+      defensivaPage,
+	  signPage,
+	  perfilPage,
+	  PerfilLogPage 
   ],
   providers: [SplashScreen,Push,{provide: ErrorHandler, useClass: IonicErrorHandler},Resultadosfirebase,IonicStorageModule,LaunchNavigator]
 })

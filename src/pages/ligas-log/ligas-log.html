@@ -1,11 +1,7 @@
 <ion-header>
 <ion-navbar color="primary">
     <ion-title> Torneos {{prueba}}</ion-title>
-	  <ion-buttons end>
-
-		  <button ion-button (click)="nuevaLiga()"> <ion-icon name="add"> </ion-icon></button>
-
-	  </ion-buttons>
+	 
   </ion-navbar>
 </ion-header>
 
@@ -15,12 +11,14 @@
 
 	<ion-grid>
 
-      <ion-row><ion-col>La Cantera Log</ion-col></ion-row>
+      <ion-row><ion-col></ion-col></ion-row>
 	  <ion-row >
 		   <button ion-button full ion-button color="secondary"  *ngFor="let u of user | async"(click)="seleccionLiga(u)">{{ u.Liga }}</button> 
 	 </ion-row>
 	  </ion-grid> 
-    
+ <ion-fab bottom right>
+   <button (click)="nuevaLiga()" ion-fab color="secondary"> <ion-icon name="add"></ion-icon></button>
+ </ion-fab>
 	
 	<!--
 	<ion-content>

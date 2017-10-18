@@ -1,27 +1,27 @@
 {
   "project_info": {
-    "project_number": "383358515000",
-    "firebase_url": "https://agenda-3ef6a.firebaseio.com",
-    "project_id": "agenda-3ef6a",
-    "storage_bucket": "agenda-3ef6a.appspot.com"
+    "project_number": "701254416116",
+    "firebase_url": "https://travesano-mx.firebaseio.com",
+    "project_id": "travesano-mx",
+    "storage_bucket": "travesano-mx.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:383358515000:android:7c421af1dfa0b81a",
+        "mobilesdk_app_id": "1:701254416116:android:7c421af1dfa0b81a",
         "android_client_info": {
           "package_name": "com.ionicframework.app447437"
         }
       },
       "oauth_client": [
         {
-          "client_id": "383358515000-rt9atmilnpnt3qd0n3t93m1ioctcgror.apps.googleusercontent.com",
+          "client_id": "701254416116-0psd3s9kcatcg6gp7ptc4b63btllhbpp.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBfQZoIWPMUJiRd3BwYZedtFPPt39_At6U"
+          "current_key": "AIzaSyDeRQGsOMbtG6AXKVfoTXfdGexcy47PEIQ"
         }
       ],
       "services": {

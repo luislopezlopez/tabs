@@ -1,42 +1,52 @@
 <ion-header>
   <ion-navbar color="primary">
-      <button ion-button menuToggle><ion-icon name="menu"></ion-icon></button>
-    <ion-title><h6 >Administrador</h6></ion-title>
-      
-	 
+     
+    <ion-title><h6 >Inicia Sesión</h6></ion-title>
+    
   </ion-navbar>
 </ion-header>
-<ion-content class="login-content" padding>
+
+
+
+<ion-content background-color= #399F8B class="login-content" padding>
   <ion-row class="logo-row">
      <ion-col col-12>
-      <img src="assets/inicio.png"/>
+      <img width=50% src="assets/inicio.png"/>
     </ion-col>
      </ion-row>
+
   <div class="login-box">
-    <form (ngSubmit)="login()" #registerForm="ngForm">
+    <form (ngSubmit)="login(user)" #registerForm="ngForm">
       <ion-row>
         <ion-col>
           <ion-list inset>
+			 
             
             <ion-item>
-              <ion-input type="text" placeholder="Usuario" name="email" [(ngModel)]="user" required></ion-input>
+              <ion-input type="text" placeholder="Correo Electrónico" name="email" [(ngModel)]="user.email" required></ion-input>
             </ion-item>
-            
-            <ion-item>
-              <ion-input type="password" placeholder="Contraseña" name="password" [(ngModel)]="password" required></ion-input>
+			  <ion-item>
+              <ion-input type="password" placeholder="Contraseña" name="password" [(ngModel)]="user.password" required></ion-input>
             </ion-item>
-            
-          </ion-list>
+			  
+			  <button ion-button class="submit-btn" full type="submit" [disabled]="!registerForm.form.valid">Iniciar Sesión</button>	  
+ 
+            </ion-list>
+			
+			
         </ion-col>
       </ion-row>
-      
-      <ion-row>
-        <ion-col class="signup-col">
-          <button ion-button class="submit-btn" full type="submit" [disabled]="!registerForm.form.valid">Iniciar Sesión</button>
-          </ion-col>
-      </ion-row>
-      
     </form>
   </div>
-		
+	<ion-row >
+			<ion-col  col-12 class="col1"><button class="boton1" >Olvidé mi contraseña</button></ion-col>
+			<ion-col  col-12 class="col1"><button class="boton1" (click)="crear()">Regístrate</button></ion-col>
+			</ion-row>
+	<h6 class="o">o</h6>
+          
+	      <button ion-button  icon-left class="facebook" full type="submit" (click)="loginFb()" ><ion-icon name="logo-facebook"></ion-icon>Inicia sesión con Facebook</button>   
+	
+	<!--<button ion-button class="register-btn" full (click)="crear()">Crear Nueva Cuenta</button>-->
 </ion-content>
+
+	
