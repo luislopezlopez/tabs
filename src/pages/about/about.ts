@@ -8,7 +8,7 @@ import { NavController, AlertController } from 'ionic-angular';
 import {FirebaseListObservable} from 'angularfire2/database';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { LaunchNavigator } from '@ionic-native/launch-navigator';
-
+//Comentario x  
 @Component({
   selector: 'page-about',
   templateUrl: 'about.html'
