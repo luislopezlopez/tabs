@@ -1,3 +1,6 @@
+import 'rxjs/add/operator/do';
+import 'rxjs/add/operator/mergeMap';
+import 'rxjs/add/operator/map';
 import { Component } from '@angular/core';
 import { Storage } from '@ionic/storage';
 import { CanchasPage } from '../Canchas/canchas';
@@ -5,6 +8,7 @@ import { NavController, AlertController } from 'ionic-angular';
 import {FirebaseListObservable} from 'angularfire2/database';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { LaunchNavigator } from '@ionic-native/launch-navigator';
+
 @Component({
   selector: 'page-about',
   templateUrl: 'about.html'
@@ -19,7 +23,7 @@ export class AboutPage {
 			   public alertController: AlertController,) { 
 	  
 	  
-	  this.promoDB= this.database.list('PromoCantera');
+	  this.promoDB= this.database.list('PromoCantera');// Quite esto : .valueChanges().subscribe
   }
   
 	

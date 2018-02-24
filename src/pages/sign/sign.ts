@@ -5,7 +5,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import {User } from "../../models/user";
 import { perfilPage } from '../perfil/perfil'; 
 import { AngularFireDatabase } from 'angularfire2/database';
-//import { FirebaseObjectObservable } from 'angularfire2/database';
+//import { FirebaseObjectObservable } from 'angularfire2/database-deprecated';
 /**
  * Generated class for the SignPage page.
  *

@@ -5,6 +5,7 @@ import { NavController, AlertController } from 'ionic-angular';
 import {FirebaseListObservable} from 'angularfire2/database';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { LaunchNavigator } from '@ionic-native/launch-navigator';
+import 'rxjs/add/operator/do';
 @Component({
   selector: 'page-about-log',
   templateUrl: 'about-log.html',

@@ -30,7 +30,7 @@ export class MyApp {
 	  this.edoSesion=estado;
 		});
 	  
-	this.pushSetup();
+	//this.pushSetup();
     this.initializeApp();
 
     this.pages = [
@@ -178,7 +178,7 @@ this.afAuth.auth.signOut().then(function() {
    
    
    
-   
+  /* 
    pushSetup(){
 	
 	// to initialize push notifications
@@ -226,7 +226,7 @@ pushObject.on('notification').subscribe((notification: any) => {
 	
 }
    
-   
+   */
    
    
   }
